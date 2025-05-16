@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login Form - Blue & Orange Theme</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-color: #fef9f4; /* nền kem nhạt */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 95, 115, 0.25);
+            width: 100%;
+            max-width: 420px;
+            padding: 30px 35px;
+            border: 3px solid #005f73; /* viền xanh dương đậm */
+            transition: box-shadow 0.3s ease;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 12px 32px rgba(244, 162, 97, 0.5); /* đổ bóng cam khi hover */
+        }
+
+        h2 {
+            text-align: center;
+            color: #005f73;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 1.2px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #005f73;
+        }
+
+        .form-control {
+            border-radius: 10px;
+            border: 2px solid #005f73;
+            padding: 10px 14px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: #f4a261;
+            box-shadow: 0 0 8px #f4a261;
+            outline: none;
+            background-color: #fff8f0;
+        }
+
+        .btn-custom {
+            background-color: #f4a261;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 12px;
+            padding: 10px 25px;
+            border: none;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #e07b3f;
+            box-shadow: 0 6px 18px rgba(244, 162, 97, 0.6);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .form-check-label {
+            color: #005f73;
+            font-weight: 600;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #005f73;
+            font-size: 1.25rem;
+            user-select: none;
+        }
+
+        textarea.form-control {
+            resize: none;
+            min-height: 90px;
+            background-color: #fff8f0;
+            border-color: #005f73;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container shadow-sm">
+        <h2>Login Form</h2>
+        <form action="login" method="post" autocomplete="off">
+
+            <div class="mb-3">
+                <label for="textbox" class="form-label">Testbox</label>
+                <input type="text" id="textbox" name="textbox" class="form-control" placeholder="Nhập text...">
+            </div>
+
+            <div class="mb-3 password-wrapper">
+                <label for="pass" class="form-label">Password</label>
+                <input type="password" id="pass" name="pass" class="form-control" placeholder="Mật khẩu">
+                <span id="togglePassword" class="toggle-password bi bi-eye-slash"></span>
+            </div>
+
+            <input type="hidden" name="hidden" />
+
+            <div class="form-check mb-3">
+                <input type="checkbox" id="checkMale" name="checkMale" class="form-check-input">
+                <label for="checkMale" class="form-check-label">Male</label>
+            </div>
+
+            <fieldset class="mb-3">
+                <legend class="form-label fw-bold" style="color:#005f73;">Status</legend>
+                <div class="form-check">
+                    <input type="radio" id="single" name="checkStatus" class="form-check-input" value="Single">
+                    <label for="single" class="form-check-label">Single</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="married" name="checkStatus" class="form-check-input" value="Married">
+                    <label for="married" class="form-check-label">Married</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="divorsed" name="checkStatus" class="form-check-input" value="Divorsed">
+                    <label for="divorsed" class="form-check-label">Divorsed</label>
+                </div>
+            </fieldset>
+
+            <div class="mb-3">
+                <label for="comboBox" class="form-label">Combo Box</label>
+                <select id="comboBox" name="comboBox" class="form-select border-2 border-primary">
+                    <option>JSP and Servlet</option>
+                    <option>EJP</option>
+                    <option>Core Java</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="multiSelect" class="form-label">Multiple</label>
+                <select id="multiSelect" name="multiSelect" class="form-select border-2 border-primary" multiple>
+                    <option>JSP and Servlet</option>
+                    <option>EJP</option>
+                    <option>Core Java</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="textarea" class="form-label">Text Area</label>
+                <textarea id="textarea" name="textarea" class="form-control" placeholder="Nhập nội dung..."></textarea>
+            </div>
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-custom">Submit</button>
+                <button type="button" class="btn btn-custom" style="background-color:#005f73;">Register</button>
+                <button type="reset" class="btn btn-custom" style="background-color:#f4a261; color:#000;">Reset</button>
+                <button type="button" class="btn btn-custom" style="background-color:#0077a3;">JavaScript</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS + Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+
+    <script>
+        // Toggle password show/hide
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('pass');
+
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            togglePassword.classList.toggle('bi-eye');
+            togglePassword.classList.toggle('bi-eye-slash');
+        });
+    </script>
+</body>
+</html>
